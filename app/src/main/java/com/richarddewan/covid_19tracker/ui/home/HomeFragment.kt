@@ -43,12 +43,17 @@ class HomeFragment : BaseFragment<HomeViewModel>() {
     override fun setupObservers() {
         super.setupObservers()
         viewModel.isLoading.observe(this, Observer {
+            pb_home.visibility = if (it) View.VISIBLE else View.GONE
 
         })
 
         viewModel.list?.observe(this, Observer {data->
             countriesAdaptor = CountriesAdaptor(data)
             setRecycleView()
+        })
+
+        viewModel.sortValue.observe(this, Observer {
+            viewModel.getAllCountryBySort()
         })
     }
 
@@ -84,6 +89,25 @@ class HomeFragment : BaseFragment<HomeViewModel>() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.navigation_country ->
+                viewModel.sortValue.value = "country"
+            R.id.navigation_cases ->
+                viewModel.sortValue.value = "cases"
+            R.id.navigation_today_cases ->
+                viewModel.sortValue.value = "todayCases"
+            R.id.navigation_deaths ->
+                viewModel.sortValue.value = "deaths"
+            R.id.navigation_today_deaths ->
+                viewModel.sortValue.value = "todayDeaths"
+            R.id.navigation_recovered ->
+                viewModel.sortValue.value = "recovered"
+            R.id.navigation_active ->
+                viewModel.sortValue.value = "active"
+            R.id.navigation_critical ->
+                viewModel.sortValue.value = "critical"
+
+        }
         return false
     }
 

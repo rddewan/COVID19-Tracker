@@ -3,6 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/navigation_country"
+        android:title="@string/menu_country" />
+    <item
+        android:id="@+id/navigation_cases"
+        android:title="@string/menu_cases" />
+    <item
+        android:id="@+id/navigation_today_cases"
+        android:title="@string/menu_todaycases" />
+    <item
+        android:id="@+id/navigation_deaths"
+        android:title="@string/menu_deaths" />
+    <item
+        android:id="@+id/navigation_today_deaths"
+        android:title="@string/menu_todaydeaths" />
+    <item
+        android:id="@+id/navigation_recovered"
+        android:title="@string/menu_recovered" />
+    <item
+        android:id="@+id/navigation_active"
+        android:title="@string/menu_active" />
+    <item
+        android:id="@+id/navigation_critical"
+        android:title="@string/menu_critical" />
+    <item
         android:id="@+id/app_bar_search"
         android:icon="@drawable/ic_action_search"
         android:title="@string/app_bar_search"
