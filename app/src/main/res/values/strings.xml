@@ -3,4 +3,24 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+
+    <string name="network_connection_error">Internet connection lost, please retry again</string>
+    <string name="network_default_error">Something wrong happened, please retry again</string>
+    <string name="network_internal_error">Our systems got an error, please retry again</string>
+    <string name="network_server_not_available">Our services are under maintenance, please retry after some time</string>
+    <string name="server_connection_error">Not able to connect, please retry again</string>
+    <string name="permission_denied">Permission Denied</string>
+    <string name="error_title">Error!</string>
+    <string name="lb_country">Country:</string>
+    <string name="ib_cases">Cases:</string>
+    <string name="ib_todaycases">TodayCases:</string>
+    <string name="lb_deaths">Deaths:</string>
+    <string name="lb_todaydeaths">TodayDeaths:</string>
+    <string name="lb_recovered">Recovered:</string>
+    <string name="lb_active">Active:</string>
+    <string name="lb_critical">Critical:</string>
+    <string name="image_description">image description</string>
+    <string name="lb_updated">Updated:</string>
+    <string name="app_bar_search">Search</string>
 </resources>
