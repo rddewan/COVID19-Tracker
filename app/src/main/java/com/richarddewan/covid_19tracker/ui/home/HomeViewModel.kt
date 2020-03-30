@@ -22,17 +22,25 @@ class HomeViewModel(
     val list: MutableLiveData<ArrayList<CountriesResponseItem>>? = MutableLiveData()
 
     override fun onCreate() {
-        isLoading.value = true
         sortValue.value = "country"
+        getAllCountryBySort()
+
+    }
+
+    fun getAllCountryBySort(){
 
         if (checkInternetConnection()){
+
+            isLoading.value = true
+
             compositeDisposable.add(
                 homeRepository.getAllCountryBySort(sortValue.value!!)
                     .subscribeOn(Schedulers.io())
                     .subscribe(
                         {
                             list?.value?.clear()
-                            it.sortWith(compareBy { it.country })
+                            if (sortValue.value == "country") it.sortWith(compareBy { it.country })
+
                             list?.postValue(it)
                             isLoading.postValue(false)
                         },

@@ -48,6 +48,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@{data.country}"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="USA" />
@@ -68,6 +69,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@{String.valueOf(data.cases)}"
+                    android:textColor="@color/dark_blue"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
                     app:layout_constraintTop_toBottomOf="@+id/dataCountry"
                     tools:text="00" />
@@ -88,6 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@{String.valueOf(data.todayCases)}"
+                    android:textColor="@color/light_blue"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
                     app:layout_constraintTop_toBottomOf="@+id/dataCases"
                     tools:text="00" />
@@ -108,6 +111,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@{String.valueOf(data.deaths)}"
+                    android:textColor="@color/dark_red"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
                     app:layout_constraintTop_toBottomOf="@+id/dataTodayCases"
                     tools:text="00" />
@@ -129,6 +133,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:text="@{String.valueOf(data.todayDeaths)}"
+                    android:textColor="@color/dark_red"
                     app:layout_constraintStart_toEndOf="@+id/ibTodayDeaths"
                     app:layout_constraintTop_toBottomOf="@+id/dataDeaths"
                     tools:text="0000" />
@@ -149,6 +154,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@{String.valueOf(data.recovered)}"
+                    android:textColor="@color/dark_green"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
                     app:layout_constraintTop_toBottomOf="@+id/dataTodayDeaths"
                     tools:text="00" />
@@ -167,8 +173,9 @@
                     android:id="@+id/dataActive"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{String.valueOf(data.active)}"
                     android:layout_marginTop="8dp"
+                    android:text="@{String.valueOf(data.active)}"
+                    android:textColor="@color/light_blue"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
                     app:layout_constraintTop_toBottomOf="@+id/dataRecovered"
                     tools:text="000" />
@@ -189,6 +196,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@{String.valueOf(data.critical)}"
+                    android:textColor="@color/light_red"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
                     app:layout_constraintTop_toBottomOf="@+id/dataActive"
                     tools:text="00" />
@@ -227,6 +235,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:textColor="@color/colorAccent"
                     app:dateTime="@{data.updated}"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
                     app:layout_constraintTop_toBottomOf="@+id/dataCritical"
