@@ -23,4 +23,12 @@
     <string name="image_description">image description</string>
     <string name="lb_updated">Updated:</string>
     <string name="app_bar_search">Search</string>
+    <string name="menu_cases">Cases</string>
+    <string name="menu_todaycases">TodayCases</string>
+    <string name="menu_deaths">Deaths</string>
+    <string name="menu_todaydeaths">TodayDeaths</string>
+    <string name="menu_recovered">Recovered</string>
+    <string name="menu_active">Active</string>
+    <string name="menu_critical">Critical</string>
+    <string name="menu_country">Country</string>
 </resources>
