@@ -92,6 +92,9 @@ dependencies {
     //https://facebook.github.io/shimmer-android/
     implementation "com.facebook.shimmer:shimmer:$facebook_shimmer"
 
+    // logger
+    implementation "com.jakewharton.timber:timber:$timber_version"
+
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
