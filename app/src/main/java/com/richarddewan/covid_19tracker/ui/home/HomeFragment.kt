@@ -1,12 +1,11 @@
 package com.richarddewan.covid_19tracker.ui.home
 
-import android.os.Bundle
-import android.view.*
-import android.widget.TextView
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.widget.SearchView
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.richarddewan.covid_19tracker.R
@@ -15,9 +14,11 @@ import com.richarddewan.covid_19tracker.di.component.FragmentComponent
 import com.richarddewan.covid_19tracker.ui.base.BaseFragment
 import com.richarddewan.covid_19tracker.ui.home.adaptor.CountriesAdaptor
 import kotlinx.android.synthetic.main.fragment_home.*
+import ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
 import java.util.*
 import javax.inject.Inject
 import kotlin.collections.ArrayList
+
 
 class HomeFragment : BaseFragment<HomeViewModel>() {
 
@@ -38,6 +39,7 @@ class HomeFragment : BaseFragment<HomeViewModel>() {
         recycleView = rv_home
         recycleView.layoutManager = linearLayoutManager
 
+
     }
 
     override fun setupObservers() {
@@ -55,10 +57,15 @@ class HomeFragment : BaseFragment<HomeViewModel>() {
         viewModel.sortValue.observe(this, Observer {
             viewModel.getAllCountryBySort()
         })
+
+
     }
 
     private fun setRecycleView(){
         recycleView.adapter = countriesAdaptor
+        val recyclerIndicator: ScrollingPagerIndicator = indicator
+        recyclerIndicator.attachToRecyclerView(recycleView)
+
     }
 
     override fun injectDependencies(fragmentComponent: FragmentComponent) {
@@ -123,5 +130,6 @@ class HomeFragment : BaseFragment<HomeViewModel>() {
 
         return filteredList
     }
+
 
 }
