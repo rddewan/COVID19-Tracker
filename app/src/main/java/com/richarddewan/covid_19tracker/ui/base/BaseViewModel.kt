@@ -14,6 +14,8 @@ abstract class BaseViewModel(
 ): ViewModel() {
 
     val messageString: MutableLiveData<String> = MutableLiveData()
+    val isInternetConnected: MutableLiveData<Boolean> = MutableLiveData()
+
 
     override fun onCleared() {
         compositeDisposable.clear()
@@ -21,6 +23,10 @@ abstract class BaseViewModel(
     }
 
     protected fun checkInternetConnection(): Boolean = networkHelper.isNetworkConnected()
+
+    protected fun isInternetConnected(){
+        isInternetConnected.value = networkHelper.isNetworkConnected()
+    }
 
     abstract fun onCreate()
 

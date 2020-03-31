@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_home"
         android:layout_width="0dp"
@@ -16,6 +18,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+        android:id="@+id/indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:verticalScrollbarPosition="defaultPosition"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:spi_dotColor="@color/colorAccent"
+        app:spi_dotSelectedColor="@color/colorPrimaryDark"
+        app:spi_dotSelectedSize="16dp"
+        app:spi_dotSize="8dp"
+        app:spi_looped="false"
+        app:spi_orientation="vertical"
+        app:spi_visibleDotCount="9" />
+
+
     <ProgressBar
         android:id="@+id/pb_home"
         style="?android:attr/progressBarStyle"
@@ -23,6 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/rv_home"
         app:layout_constraintStart_toStartOf="@+id/rv_home"

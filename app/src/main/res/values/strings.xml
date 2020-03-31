@@ -10,6 +10,8 @@
     <string name="network_internal_error">Our systems got an error, please retry again</string>
     <string name="network_server_not_available">Our services are under maintenance, please retry after some time</string>
     <string name="server_connection_error">Not able to connect, please retry again</string>
+    <string name="no_internet_connection">There is no internet connection, please retry again</string>
+    <string name="no_internet_title">Ouch!</string>
     <string name="permission_denied">Permission Denied</string>
     <string name="error_title">Error!</string>
     <string name="lb_country">Country:</string>
@@ -31,4 +33,5 @@
     <string name="menu_active">Active</string>
     <string name="menu_critical">Critical</string>
     <string name="menu_country">Country</string>
+    <string name="this_is_a_world_wide_cases">This is a world wide cases</string>
 </resources>

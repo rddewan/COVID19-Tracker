@@ -27,9 +27,12 @@ class CountriesAdaptor(private var list: ArrayList<CountriesResponseItem>): Recy
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val data: CountriesResponseItem = list[position]
+        if (list.size > 0 ){
+            val data: CountriesResponseItem = list[position]
 
-        holder.countriesList.data = data
+            holder.countriesList.data = data
+        }
+
     }
 
     class ViewHolder(binding: CountriesListViewBinding): RecyclerView.ViewHolder(binding.root){
