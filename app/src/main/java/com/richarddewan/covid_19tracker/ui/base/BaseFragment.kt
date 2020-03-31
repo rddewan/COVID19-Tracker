@@ -42,6 +42,12 @@ abstract class BaseFragment<VM: BaseViewModel>: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupView(view)
+
+        viewModel.isInternetConnected.observe(viewLifecycleOwner, Observer {
+            if (!it){
+                showNoInterDialog()
+            }
+        })
     }
 
     protected open fun setupObservers(){
@@ -50,6 +56,7 @@ abstract class BaseFragment<VM: BaseViewModel>: Fragment() {
                 showErrorDialog(this)
             }
         })
+
     }
 
     @LayoutRes
@@ -64,6 +71,17 @@ abstract class BaseFragment<VM: BaseViewModel>: Fragment() {
             isCancelable = false
             title = getString(R.string.error_title)
             message = msg
+            positiveButton("OK") {
+                it.dismiss()
+            }
+        }.show()
+    }
+
+    private fun showNoInterDialog(){
+        alert {
+            isCancelable = false
+            title = getString(R.string.no_internet_title)
+            message = getString(R.string.no_internet_connection)
             positiveButton("OK") {
                 it.dismiss()
             }

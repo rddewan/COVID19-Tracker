@@ -20,6 +20,7 @@ class HomeViewModel(
     val isLoading: MutableLiveData<Boolean> = MutableLiveData()
     val sortValue: MutableLiveData<String> = MutableLiveData()
     val list: MutableLiveData<ArrayList<CountriesResponseItem>>? = MutableLiveData()
+    val isNetworkConnected: MutableLiveData<Boolean> = MutableLiveData()
 
     override fun onCreate() {
         sortValue.value = "country"
@@ -28,6 +29,8 @@ class HomeViewModel(
     }
 
     fun getAllCountryBySort(){
+
+        isInternetConnected()
 
         if (checkInternetConnection()){
 

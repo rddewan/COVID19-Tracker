@@ -2,6 +2,7 @@ package com.richarddewan.covid_19tracker.di.component
 
 import com.richarddewan.covid_19tracker.MyApplication
 import com.richarddewan.covid_19tracker.data.remote.NetworkService
+import com.richarddewan.covid_19tracker.data.repository.DashboardRepository
 import com.richarddewan.covid_19tracker.data.repository.HomeRepository
 import com.richarddewan.covid_19tracker.di.module.ApplicationModule
 import com.richarddewan.covid_19tracker.util.network.NetworkHelper
@@ -22,4 +23,6 @@ interface ApplicationComponent {
     fun getCompositeDisposable(): CompositeDisposable
 
     fun getHomeRepository(): HomeRepository
+
+    fun getDashboardRepository(): DashboardRepository
 }

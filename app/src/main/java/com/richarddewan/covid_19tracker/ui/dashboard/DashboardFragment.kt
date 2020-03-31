@@ -9,23 +9,42 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.richarddewan.covid_19tracker.R
+import com.richarddewan.covid_19tracker.di.component.FragmentComponent
+import com.richarddewan.covid_19tracker.ui.base.BaseFragment
+import com.richarddewan.covid_19tracker.util.GeneralHelper
+import kotlinx.android.synthetic.main.fragment_dashboard.*
+import org.jetbrains.anko.alert
+import org.jetbrains.anko.support.v4.alert
 
-class DashboardFragment : Fragment() {
+class DashboardFragment : BaseFragment<DashboardViewModel>() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+    override fun provideLayoutId(): Int = R.layout.fragment_dashboard
+
+    override fun setupView(view: View) {
+
     }
+
+    override fun setupObservers() {
+        super.setupObservers()
+
+        viewModel.isLoading.observe(this, Observer {
+            pb_dashboard.visibility = if (it) View.VISIBLE else View.GONE
+        })
+
+        viewModel.totalCases.observe(this, Observer {
+            dataCases.text = it.cases.toString()
+            dataDeaths.text = it.deaths.toString()
+            dataRecovered.text = it.recovered.toString()
+            dataActive.text = it.active.toString()
+            dataDateTime.text = GeneralHelper.convertLongToDateTime(it.updated)
+        })
+
+    }
+
+    override fun injectDependencies(fragmentComponent: FragmentComponent) {
+        fragmentComponent.inject(this)
+
+    }
+
 }
