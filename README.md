@@ -1,5 +1,5 @@
 # COVID19-Tracker
-[![Build status](https://build.appcenter.ms/v0.1/apps/c3cebb8d-9626-47df-855a-4f07291605af/branches/dev/badge)](https://appcenter.ms)
+[![Build status](https://build.appcenter.ms/v0.1/apps/791bc3bb-a127-4023-8234-ff93e90bea72/branches/dev/badge)](https://appcenter.ms)
 <br>
 <h3>Web API provided by https://corona.lmao.ninja</h3>
 <br>
