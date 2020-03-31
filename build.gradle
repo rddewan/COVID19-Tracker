@@ -60,4 +60,10 @@ ext {
     // Logging
     timber_version = '4.7.1'
 
+    //scrollingpagerindicator
+    scrollingpagerindicator = '1.2.0'
+
+    //ms app center
+    appCenterSdkVersion = '3.1.0'
+
 }
