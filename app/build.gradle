@@ -5,6 +5,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs'
 
 android {
+
     dataBinding {
         enabled = true
     }
@@ -15,15 +16,15 @@ android {
         applicationId "com.richarddewan.covid_19tracker"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         debug {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField("String","BASE_URL","\"https://corona.lmao.ninja/\"")
             buildConfigField("String","MYAPP_SECRET","\"2e041a01-c20a-446c-905f-6322191de438\"")
@@ -33,6 +34,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField("String","BASE_URL","\"https://corona.lmao.ninja/\"")
             buildConfigField("String","MYAPP_SECRET","\"2e041a01-c20a-446c-905f-6322191de438\"")
+
         }
     }
 
