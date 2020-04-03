@@ -5,14 +5,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs'
 
 android {
-    signingConfigs {
-        release {
-            storeFile file('D:\\KeyStrock\\2019\\BinaryITSolution.jks')
-            keyAlias = 'BinaryITSolution'
-            storePassword '51PJ21fVxXretWv5aZJR'
-            keyPassword '51PJ21fVxXretWv5aZJR'
-        }
-    }
+
     dataBinding {
         enabled = true
     }
@@ -31,7 +24,7 @@ android {
 
     buildTypes {
         debug {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField("String","BASE_URL","\"https://corona.lmao.ninja/\"")
             buildConfigField("String","MYAPP_SECRET","\"2e041a01-c20a-446c-905f-6322191de438\"")
@@ -41,7 +34,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField("String","BASE_URL","\"https://corona.lmao.ninja/\"")
             buildConfigField("String","MYAPP_SECRET","\"2e041a01-c20a-446c-905f-6322191de438\"")
-            signingConfig signingConfigs.release
+
         }
     }
 
