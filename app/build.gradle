@@ -32,7 +32,7 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField("String","BASE_URL","\"https://corona.lmao.ninja/\"")
+            buildConfigField("String","BASE_URL","\"https://corona.lmao.ninja/v2/\"")
             buildConfigField("String","MYAPP_SECRET","\"2e041a01-c20a-446c-905f-6322191de438\"")
 
         }
