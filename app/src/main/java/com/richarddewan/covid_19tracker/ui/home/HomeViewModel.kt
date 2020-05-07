@@ -40,7 +40,7 @@ class HomeViewModel(
                 homeRepository.getAllCountryBySort(sortValue.value!!)
                     .subscribeOn(Schedulers.io())
                     .subscribe(
-                        {
+                        { it ->
                             list?.value?.clear()
                             if (sortValue.value == "country") it.sortWith(compareBy { it.country })
 
